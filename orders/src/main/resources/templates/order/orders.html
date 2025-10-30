@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8">
+	<title>Список заказов</title>
+</head>
+<body>
+<section class="rowindus">
+	<div class="container mt-5">
+		<h2>Список заказов</h2>
+		<table class="table">
+			<tr>
+				<th scope="col">Id пользователя:</th>
+				<th scope="col">Номер заказа:</th>
+				<th scope="col">Стоимость заказа:</th>
+			</tr>
+			
+			<tr th:each="el:${orders}" class="alert alert-info mt-1">
+				<td th:text="${el.iduser}"></td>
+				<td th:text="${el.ordernum}"></td>
+				<td th:text="${el.ordersum}"></td>
+				<td>
+					<a th:href="@{'/orderdell/' + ${el.id}}" class="btn btn-success btn-sm">Удалить заказ</a>
+				</td>
+			</tr>
+		</table>
+		<a th:href="@{'/orderadd'}" class="btn btn-success btn-sm">Добавить заказ</a>
+	</div>
+</section>
+
+
+</body>
+</html>

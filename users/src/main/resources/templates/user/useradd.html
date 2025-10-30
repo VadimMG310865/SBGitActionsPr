@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base::layout(~{::section})}">
+<head>
+  <meta charset="UTF-8">
+  <title>Добавить пользователя</title>
+</head>
+<body>
+<section class="rowindus">
+	  <h2>Новый пользователь</h2>
+	  <form action="/newuseradd" method="post" >
+		  <input type="text" name="name" placeholder="введите имя пользователя" class="form=control">
+		  <input type="number" name="balanse" placeholder="введите баланс пользователя" class="form=control">
+		  <button type="submit" class="btn btn-success">Сохранить</button>
+	  </form>
+  </div>
+</section>
+</body>
+</html>

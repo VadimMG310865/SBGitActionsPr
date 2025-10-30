@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8">
+	<title>Добавить заказ</title>
+</head>
+<body>
+<section class="rowindus">
+<!--	<div class="container mt-5">-->
+<!--		<h2>Список пользователей</h2>-->
+<!--		-->
+<!--		<table class="table">-->
+<!--			<tr>-->
+<!--				<th scope="col">Имя пользователя:</th>-->
+<!--				<th scope="col">Баланс:</th>-->
+<!--			</tr>-->
+<!--			-->
+<!--			&lt;!&ndash;		  <tr th:each="el:${users}" class="alert alert-info">&ndash;&gt;-->
+<!--			<tr th:each="el:${users}" >-->
+<!--				<td th:text="${el.name}"></td>-->
+<!--				<td th:text="${el.balance}"></td>-->
+<!--				<td>-->
+<!--					<a th:href="@{'/userdell/' + ${el.id}}" class="btn btn-success btn-sm">Удалить пользователя</a>-->
+<!--				</td>-->
+<!--			</tr>-->
+<!--		</table>-->
+<!--		<a th:href="@{'/useradd'}" class="btn btn-success btn-sm">Добавить пользователя</a>-->
+<!--	</div>-->
+	
+<!--</section>-->
+<!--</body>-->
+<!--</html>-->
+<!--	-->
+	
+	
+	
+	
+	
+	
+	<div class="container mt-5">
+	  <h2>Новый заказ</h2>
+	  <form action="/neworderadd" method="post" >
+	  <div class="container" style="display: flex;">
+       <div>
+		  <select name="iduser" class="form-control" style="width: 100px; height: 31px; border-color: black">
+			  <option>--select--</option>
+	    	  <option th:each="el:${users}" th:value="${el.id}" th:text="${el.name()}" ></option>
+		  </select>
+       </div>
+       <div>
+		  <input type="text" name="ordnum" placeholder="введите номер заказа" class="form=control">
+       </div>
+	   <div>
+	       <input type="number" name="ordsum" placeholder="введите стоимость заказа" class="form=control">
+	   </div>
+		  <button type="submit" class="btn btn-success" style="width: 100px; height: 31px;">Добавить</button>
+	  </div>
+		 
+	  </form>
+  </div>
+
+
+
+</section>
+</body>
+</html>

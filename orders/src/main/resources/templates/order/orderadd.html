@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base::layout(~{::section})}">
+<head>
+  <meta charset="UTF-8">
+  <title>Добавить заказ</title>
+</head>
+<body>
+<section class="rowindus">
+	  <h2>Новый заказ</h2>
+	  <form action="/neworderadd" method="post" >
+		  <input type="number" name="iduser" placeholder="введите id пользователя" class="form=control">
+		  <input type="text" name="ordnum" placeholder="введите номер заказа" class="form=control">
+		  <input type="number" name="ordsum" placeholder="введите стоимость заказа" class="form=control">
+		  <button type="submit" class="btn btn-success">Добавить</button>
+	  </form>
+  </div>
+</section>
+</body>
+</html>

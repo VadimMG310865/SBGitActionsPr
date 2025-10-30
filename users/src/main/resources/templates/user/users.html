@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base::layout(~{::section})}">
+<head>
+  <meta charset="UTF-8">
+  <title>Список пользователей</title>
+</head>
+<body>
+<section class="rowindus">
+  <div class="container mt-5">
+	  <h2>Список пользователей</h2>
+	  
+	  <table class="table">
+		  <tr>
+			  <th scope="col">Имя пользователя:</th>
+			  <th scope="col">Баланс:</th>
+		  </tr>
+		  
+<!--		  <tr th:each="el:${users}" class="alert alert-info">-->
+		  <tr th:each="el:${users}" >
+			  <td th:text="${el.name}"></td>
+			  <td th:text="${el.balance}"></td>
+			  <td>
+				 <a th:href="@{'/userdell/' + ${el.id}}" class="btn btn-success btn-sm">Удалить пользователя</a>
+		      </td>
+		  </tr>
+<!--		  <div th:each="el:${users}" class="alert alert-info">-->
+<!--			  <p th:text="${el.name}"></p>-->
+<!--			  <p th:text="${el.balance}"></p>-->
+<!--			  <a th:href="@{'/userdell/' + ${el.id}}" class="btn btn-success btn-sm">Удалить пользователя</a>-->
+<!--		  </div>-->
+	  </table>
+      <a th:href="@{'/useradd'}" class="btn btn-success btn-sm">Добавить пользователя</a>
+  </div>
+</section>
+</body>
+</html>
